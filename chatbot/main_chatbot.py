@@ -22,7 +22,7 @@ def setup_rag_pipeline(file_path):
     Loads a document (PDF or TXT), splits it, creates embeddings, 
     and sets up a retriever.
     """
-    # --- MODIFIED PART: Select loader based on file extension ---
+    # ---  Select loader based on file extension ---
     file_extension = os.path.splitext(file_path)[1].lower()
     
     if file_extension == '.pdf':
@@ -71,7 +71,7 @@ def setup_rag_pipeline(file_path):
     
     return qa_chain
 
-# --- 2. Complaint Management & API Integration (No changes here) ---
+# --- 2. Complaint Management & API Integration ---
 def handle_complaint_creation(details):
     """Calls the API to create a complaint."""
     try:
@@ -95,13 +95,13 @@ def extract_complaint_id(query):
     match = re.search(r'\b(CMP-[A-Z0-9]{8})\b', query, re.IGNORECASE)
     return match.group(0) if match else None
 
-# --- 3. Main Chatbot Logic (MODIFIED) ---
+# --- 3. Main Chatbot Logic  ---
 def main():
     """Main function to run the chatbot interaction loop."""
     print("Setting up the RAG pipeline with Ollama...")
+
+    # --- Point to the new .txt file ---
     
-    # --- MODIFIED PART: Point to the new .txt file ---
-    # You can change this back to your .pdf file if you want
     knowledge_base_path = os.path.join("..", "knowledge_base", "sample_faq.txt")
     
     if not os.path.exists(knowledge_base_path):
