@@ -1,0 +1,38 @@
+# # For the API
+# fastapi
+# uvicorn
+
+# # For the Chatbot and RAG
+# langchain
+# langchain-community
+# langchain-ollama
+# langchain-chroma
+# pypdf
+# requests
+# sentence-transformers
+
+# # For running HuggingFace models
+# torch
+# accelerate
+# bitsandbytes
+
+# For the API
+fastapi
+uvicorn
+
+# For the Chatbot and RAG
+langchain
+langchain-community
+langchain-chroma
+langchain-ollama
+pypdf
+requests
+sentence-transformers
+
+# For running local models/embeddings
+torch
+accelerate
+bitsandbytes
+
+# For the UI
+streamlit
